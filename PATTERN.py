@@ -1,6 +1,7 @@
-n = int(input("Enter Number of rows: "))
-for i in range(1, n+1):
-    
-    print(" " * (n - i), end='')  
-    
-    print("*" * (2 * i - 1))
+n = int(input("Enter the row size for the pattern: "))
+for i in range(1, n + 1):  # Outer loop for rows
+    for j in range(n  - i):  # Inner loop for spaces
+        print(" ", end=" ")
+    for k in range(1, 2 * i):  # Inner loop for stars
+        print("*", end=" ")
+    print()
