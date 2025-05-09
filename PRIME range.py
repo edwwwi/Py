@@ -1,11 +1,13 @@
-import math
 start = int(input("Enter start of range: "))
 end = int(input("Enter end of range: "))
 
 for num in range(start, end + 1):
-    if num > 1:
-        for i in range(2, int(math.sqrt(num)) + 1):
-            if num % i == 0:
-                break
-        else:
-            print(num, end=' ')
+    is_prime = True
+    if num < 2:
+        is_prime = False  # 0 and 1 are not prime
+    for i in range(2, num):
+        if num % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(num, end=' ')
