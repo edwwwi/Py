@@ -1,14 +1,12 @@
-from PIL import Image
+from images import Image  # type: ignore
 
 def gs(image):
-    pixels = image.load()
-    for y in range(image.height):
-        for x in range(image.width):
-            r, g, b = pixels[x, y]
+    for y in range(image.get_height()):
+        for x in range(image.get_width()):
+            r, g, b = image.get_pixel(x, y)
             lum = int(r * 0.299 + g * 0.587 + b * 0.114)
-            pixels[x, y] = (lum, lum, lum)
+            image.set_pixel(x, y, (lum, lum, lum))
 
-image = Image.open("Edwin.jpg")
-image = image.convert("RGB")  # Ensure it's in RGB mode
+image = Image("try.png")
 gs(image)
-image.show()  # Or image.save("gray_Edwin.jpg")
+image.show()
