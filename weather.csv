@@ -1,0 +1,11 @@
+date,temperature,humidity,windSpeed,precipitationType,place,weather
+2025-05-01,30,70,12,None,Chennai,Sunny
+2025-05-02,29,65,10,None,Bangalore,Cloudy
+2025-05-03,32,80,15,Rain,Kochi,Rainy
+2025-05-04,28,60,8,None,Hyderabad,Sunny
+2025-05-05,27,75,9,Rain,Mumbai,Cloudy
+2025-05-06,33,85,20,None,Delhi,Sunny
+2025-05-07,26,78,14,Rain,Trivandrum,Rainy
+2025-05-08,31,68,13,None,Pune,Sunny
+2025-05-09,25,72,11,Rain,Kolkata,Rainy
+2025-05-10,29,69,10,None,Ahmedabad,Cloudy
