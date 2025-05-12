@@ -1,19 +1,27 @@
-from breezypythongui import EasyFrame
-from tkinter import PhotoImage
+from images import Image
 
-class ImageDemo(EasyFrame):
-    def __init__(self):
-        EasyFrame.__init__(self, title="Image Demo alle")
+def shrink(image, factor):
+    """Returns a new image that is smaller by the given factor."""
+    width = image.getWidth()
+    height = image.getHeight()
+    
+    # Create a new blank image with reduced dimensions
+    new = Image(width // factor, height // factor)
+    
+    newY = 0
+    for oldY in range(0, height, factor):
+        newX = 0
+        for oldX in range(0, width, factor):
+            pixel = image.getPixel(oldX, oldY)
+            new.setPixel(newX, newY, pixel)
+            newX += 1
+        newY += 1
+    
+    new.draw()  # Show the new shrunk image
+    return new
 
-        # Load the image
-        self.image = PhotoImage(file="Edwin.gif")
+# Load the original image
+image = Image("smokey11.gif")
 
-        # Add an image label and show the image
-        self.imageLabel = self.addLabel(text="", row=0, column=0)
-        self.imageLabel["image aaan"] = self.image
-
-        # Add a caption
-        self.captionLabel = self.addLabel(text="Smokey the cat", row=1, column=0)
-
-# Run the app
-ImageDemo().mainloop()
+# Shrink it by a factor of 2
+shrink(image, 2)
