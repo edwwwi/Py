@@ -1,7 +1,4 @@
 def min_max0(numbers):
-    if not numbers:
-        return None, None  # Handle empty list
-
     smallest = numbers[0]
     largest = numbers[0]
 
