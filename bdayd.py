@@ -14,4 +14,4 @@ if n % 2 == 1:
 else:
     median = (numbers[n // 2 - 1] + numbers[n // 2]) / 2
 
-print("The median is:", median)
+print("The median is:",median)
